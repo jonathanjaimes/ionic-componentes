@@ -1,0 +1,63 @@
+<app-header titulo="Input"></app-header>
+
+<ion-content>
+
+<h3>Default Input</h3>
+<ion-input></ion-input>
+<h3>Input with value</h3>
+<ion-input value="custom"></ion-input>
+<h3>Input with placeholder</h3>
+<ion-input placeholder="Enter Input"></ion-input>
+<h3>Input with clear button when there is a value</h3>
+<ion-input clearInput value="clear me"></ion-input>
+<h3>Number type input</h3>
+<ion-input type="number" value="333"></ion-input>
+<h3>Disabled input</h3>
+<ion-input value="Disabled" disabled></ion-input>
+<h3>Readonly input</h3>
+<ion-input value="Readonly" readonly></ion-input>
+<h3>Inputs with labels</h3>
+<ion-item>
+  <ion-label>Default Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="floating">Floating Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="fixed">Fixed Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Stacked Label</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+
+<p>OTRA SECCIÓN</p>
+
+<form action="" [formGroup] = "registro" (submit)="enviar()" class="d-flex">
+  <ion-label>Nombre</ion-label>
+  <ion-input type="text" placeholder="Awesome Input" formControlName="nombre"></ion-input>
+  <ion-label>Apellido</ion-label>
+  <ion-input type="text" placeholder="Awesome Input" formControlName="apellido"></ion-input>
+  <ion-button type="submit" expand="block" fill="clear" shape="round">
+    Enviar
+  </ion-button>
+  <ion-button (click)="refrescar()" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
+</form>
+
+<ion-list>
+  <ion-item *ngFor="let dato of data" (click)="verDatos(dato)">
+    <ion-label>Nombre: {{dato.nombre}}</ion-label>
+    <ion-label>Apellido: {{dato.apellido}}</ion-label>
+
+  </ion-item>
+</ion-list>
+
+</ion-content>

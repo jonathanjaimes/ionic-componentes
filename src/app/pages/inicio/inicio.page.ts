@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
-}
+import { Componente } from '../../interfaces/imenu';
+import { Observable } from 'rxjs';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -13,37 +10,13 @@ interface Componente {
 })
 export class InicioPage implements OnInit {
 
-  componentes:Componente[] = [
-    {
-      icon: 'american-football-outline',
-      name: 'Action Sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Botones',
-      redirectTo: '/botones'
-    },
-    {
-      icon: 'alert-circle-outline',
-      name: 'Cards',
-      redirectTo: '/cards'
-    }
-  ]
+
 
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }

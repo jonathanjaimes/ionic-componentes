@@ -1,0 +1,91 @@
+<app-header titulo="datetime"></app-header>
+
+<ion-content>
+
+  <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="6">
+        <ion-item >
+          <ion-label id="open-date-input">Date</ion-label>
+          <ion-text slot="end">dfsdfdsfd</ion-text>
+          <ion-popover size="auto" trigger="open-date-input" show-backdrop="true" side="bottom" triggerAction="click">
+            <ng-template>
+              <ion-datetime
+                #popoverDatetime
+                presentation="date"
+      
+              ></ion-datetime>
+            </ng-template>
+          </ion-popover>
+        </ion-item>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+    <h3>Initial value</h3>
+    <ion-datetime value="2012-12-15T13:47:20.789"></ion-datetime>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Awesome Label</ion-label>
+        <ion-datetime [value]="fechaActual.toISOString()" (ionChange)="cambioFecha($event)"
+        display-format="DD MMMM YYYY"
+          ></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Awesome Label</ion-label>
+        <ion-datetime [value]="fechaActual.toISOString()" (ionChange)="cambioFecha($event)"
+        display-format="YYYY" min="2000" max="2020"
+          ></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Custom options</ion-label>
+        <ion-datetime></ion-datetime>
+      </ion-item>
+    </ion-list>
+  
+    <h3>Readonly</h3>
+    <ion-datetime readonly></ion-datetime>
+    
+    <h3>Disabled</h3>
+    <ion-datetime disabled></ion-datetime>
+    
+    <h3>Custom locale</h3>
+    <ion-datetime locale="en-GB"></ion-datetime>
+    
+    <h3>Max and min</h3>
+    <ion-datetime min="1994-03-14" max="2012-12-09" value="2008-09-02"></ion-datetime>
+    
+    <h3>15 minute increments</h3>
+    <ion-datetime minute-values="0,15,30,45"></ion-datetime>
+    
+    <h3>Specific days/months/years </h3>
+    <ion-datetime month-values="6,7,8" year-values="2014,2015" day-values="01,02,03,04,05,06,08,09,10,11,12,13,14"></ion-datetime>
+    
+    <h3>Selecting time, no date</h3>
+    <ion-datetime presentation="time"></ion-datetime>
+    
+    <h3>Selecting time first, date second</h3>
+    <ion-datetime presentation="time-date"></ion-datetime>
+  
+    <h3>Full width size</h3>
+    <ion-datetime size="cover"></ion-datetime>
+    
+    <h3>Custom Hour Cycle</h3>
+    <ion-datetime hour-cycle="h23"></ion-datetime>
+    
+    <h3>Custom first day of week</h3>
+    <ion-datetime first-day-of-week="1"></ion-datetime>
+  
+    <h3>Custom title</h3>
+    <ion-datetime>
+      <div slot="title">My Custom Title</div>
+    </ion-datetime>
+
+
+
+</ion-content>
